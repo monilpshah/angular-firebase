@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "fir-functions-api-cbf5f": {
+      "hosting": {
+        "task-management": [
+          "fir-functions-api-cbf5f"
+        ]
+      }
+    }
+  }
+}
