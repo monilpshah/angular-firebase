@@ -3,6 +3,31 @@
   <span>&nbsp; &nbsp;Task Management</span>
 </mat-toolbar>
 
+<!-- FORM START -->
+<div style="align-items: center;padding-left: 2%;">
+  <h2>User Form</h2>
+  <mat-form-field appearance="outline" style="width: 90%;">
+    <mat-label>User Name</mat-label>
+    <input matInput placeholder="Placeholder" [(ngModel)]="uname" required>
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+  <div class="example-container">
+    <mat-form-field appearance="fill" style="width: 90%;"> 
+      <input matInput placeholder="pat@example.com"  required [(ngModel)]="uemail">
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </div>
+  <mat-form-field appearance="fill" style="width: 90%;">
+    <mat-label>Message</mat-label>
+    <textarea matInput [(ngModel)]="umsg" required></textarea>
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field><br>
+  <button mat-raised-button color="primary" style="margin: auto;display: flex;" (click)="formSubmit()" [disabled]="!uname || !uemail || !umsg">Submit</button>
+</div>
+<!-- FORM END -->
+
+
+<!-- TASK START -->
 <div class="content-wrapper">
   <button mat-button (click)="newTask()"> 
     <mat-icon>add</mat-icon>Add Task
@@ -57,3 +82,4 @@
     </div>
   </div>
 </div>
+<!-- TASK END -->

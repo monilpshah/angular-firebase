@@ -16,7 +16,12 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
+
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormService } from './service/form.service';
+
 
 @NgModule({
   declarations: [
@@ -34,11 +39,13 @@ import { environment } from 'src/environments/environment';
     MatButtonModule,
     MatDialogModule,
     MatInputModule,
+    MatFormFieldModule,
     FormsModule,
     AngularFirestoreModule,
+    AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
-  providers: [],
+  providers: [FormService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
